@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.practice.mapper.TAnswerMapper">
+  <resultMap id="BaseResultMap" type="com.practice.vo.TAnswer">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="topic_id" jdbcType="BIGINT" property="topicId" />
+    <result column="an_seq" jdbcType="TINYINT" property="anSeq" />
+    <result column="an_type" jdbcType="TINYINT" property="anType" />
+    <result column="an_id" jdbcType="BIGINT" property="anId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, topic_id, an_seq, an_type, an_id
+  </sql>
+  <select id="selectByExample" parameterType="com.practice.vo.TAnswerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_answer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_answer
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_answer
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.practice.vo.TAnswerExample">
+    delete from t_answer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.practice.vo.TAnswer">
+    insert into t_answer (id, topic_id, an_seq, 
+      an_type, an_id)
+    values (#{id,jdbcType=BIGINT}, #{topicId,jdbcType=BIGINT}, #{anSeq,jdbcType=TINYINT}, 
+      #{anType,jdbcType=TINYINT}, #{anId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.practice.vo.TAnswer">
+    insert into t_answer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="topicId != null">
+        topic_id,
+      </if>
+      <if test="anSeq != null">
+        an_seq,
+      </if>
+      <if test="anType != null">
+        an_type,
+      </if>
+      <if test="anId != null">
+        an_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="topicId != null">
+        #{topicId,jdbcType=BIGINT},
+      </if>
+      <if test="anSeq != null">
+        #{anSeq,jdbcType=TINYINT},
+      </if>
+      <if test="anType != null">
+        #{anType,jdbcType=TINYINT},
+      </if>
+      <if test="anId != null">
+        #{anId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.practice.vo.TAnswerExample" resultType="java.lang.Long">
+    select count(*) from t_answer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_answer
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.topicId != null">
+        topic_id = #{record.topicId,jdbcType=BIGINT},
+      </if>
+      <if test="record.anSeq != null">
+        an_seq = #{record.anSeq,jdbcType=TINYINT},
+      </if>
+      <if test="record.anType != null">
+        an_type = #{record.anType,jdbcType=TINYINT},
+      </if>
+      <if test="record.anId != null">
+        an_id = #{record.anId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_answer
+    set id = #{record.id,jdbcType=BIGINT},
+      topic_id = #{record.topicId,jdbcType=BIGINT},
+      an_seq = #{record.anSeq,jdbcType=TINYINT},
+      an_type = #{record.anType,jdbcType=TINYINT},
+      an_id = #{record.anId,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.practice.vo.TAnswer">
+    update t_answer
+    <set>
+      <if test="topicId != null">
+        topic_id = #{topicId,jdbcType=BIGINT},
+      </if>
+      <if test="anSeq != null">
+        an_seq = #{anSeq,jdbcType=TINYINT},
+      </if>
+      <if test="anType != null">
+        an_type = #{anType,jdbcType=TINYINT},
+      </if>
+      <if test="anId != null">
+        an_id = #{anId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.practice.vo.TAnswer">
+    update t_answer
+    set topic_id = #{topicId,jdbcType=BIGINT},
+      an_seq = #{anSeq,jdbcType=TINYINT},
+      an_type = #{anType,jdbcType=TINYINT},
+      an_id = #{anId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
