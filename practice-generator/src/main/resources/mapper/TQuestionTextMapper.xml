@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.practice.mapper.TQuestionTextMapper">
-  <resultMap id="BaseResultMap" type="com.practice.vo.TQuestionText">
+<mapper namespace="com.practice.content.mapper.TQuestionTextMapper">
+  <resultMap id="BaseResultMap" type="com.practice.content.vo.TQuestionText">
     <id column="id" jdbcType="BIGINT" property="id" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.practice.vo.TQuestionText">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.practice.content.vo.TQuestionText">
     <result column="text" jdbcType="LONGVARCHAR" property="text" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -71,7 +71,7 @@
   <sql id="Blob_Column_List">
     text
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.practice.vo.TQuestionTextExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.practice.content.vo.TQuestionTextExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -87,7 +87,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.practice.vo.TQuestionTextExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.practice.content.vo.TQuestionTextExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -113,17 +113,17 @@
     delete from t_question_text
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.practice.vo.TQuestionTextExample">
+  <delete id="deleteByExample" parameterType="com.practice.content.vo.TQuestionTextExample">
     delete from t_question_text
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.practice.vo.TQuestionText">
+  <insert id="insert" parameterType="com.practice.content.vo.TQuestionText">
     insert into t_question_text (id, text)
     values (#{id,jdbcType=BIGINT}, #{text,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.practice.vo.TQuestionText">
+  <insert id="insertSelective" parameterType="com.practice.content.vo.TQuestionText">
     insert into t_question_text
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -142,7 +142,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.practice.vo.TQuestionTextExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.practice.content.vo.TQuestionTextExample" resultType="java.lang.Long">
     select count(*) from t_question_text
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -177,7 +177,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.practice.vo.TQuestionText">
+  <update id="updateByPrimaryKeySelective" parameterType="com.practice.content.vo.TQuestionText">
     update t_question_text
     <set>
       <if test="text != null">
@@ -186,7 +186,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.practice.vo.TQuestionText">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.practice.content.vo.TQuestionText">
     update t_question_text
     set text = #{text,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}

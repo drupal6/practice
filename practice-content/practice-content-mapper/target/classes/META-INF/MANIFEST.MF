@@ -5,6 +5,6 @@ Built-By: Administrator
 Implementation-Vendor-Id: com.practice
 Build-Jdk: 1.8.0_152
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/practice/practice-conent/practice-content-mapper
+ ot-starter-parent/practice/practice-content/practice-content-mapper
 Created-By: Maven Integration for Eclipse
 

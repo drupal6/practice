@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.practice.mapper.TTopicMapper">
-  <resultMap id="BaseResultMap" type="com.practice.vo.TTopic">
+<mapper namespace="com.practice.content.mapper.TTopicMapper">
+  <resultMap id="BaseResultMap" type="com.practice.content.vo.TTopic">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="seq" jdbcType="TINYINT" property="seq" />
     <result column="type" jdbcType="TINYINT" property="type" />
@@ -68,7 +68,7 @@
   <sql id="Base_Column_List">
     id, seq, type, score
   </sql>
-  <select id="selectByExample" parameterType="com.practice.vo.TTopicExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.practice.content.vo.TTopicExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -92,19 +92,19 @@
     delete from t_topic
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.practice.vo.TTopicExample">
+  <delete id="deleteByExample" parameterType="com.practice.content.vo.TTopicExample">
     delete from t_topic
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.practice.vo.TTopic">
+  <insert id="insert" parameterType="com.practice.content.vo.TTopic">
     insert into t_topic (id, seq, type, 
       score)
     values (#{id,jdbcType=BIGINT}, #{seq,jdbcType=TINYINT}, #{type,jdbcType=TINYINT}, 
       #{score,jdbcType=TINYINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.practice.vo.TTopic">
+  <insert id="insertSelective" parameterType="com.practice.content.vo.TTopic">
     insert into t_topic
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -135,7 +135,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.practice.vo.TTopicExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.practice.content.vo.TTopicExample" resultType="java.lang.Long">
     select count(*) from t_topic
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -171,7 +171,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.practice.vo.TTopic">
+  <update id="updateByPrimaryKeySelective" parameterType="com.practice.content.vo.TTopic">
     update t_topic
     <set>
       <if test="seq != null">
@@ -186,7 +186,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.practice.vo.TTopic">
+  <update id="updateByPrimaryKey" parameterType="com.practice.content.vo.TTopic">
     update t_topic
     set seq = #{seq,jdbcType=TINYINT},
       type = #{type,jdbcType=TINYINT},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.practice.mapper.TQuestionCanvasMapper">
-  <resultMap id="BaseResultMap" type="com.practice.vo.TQuestionCanvas">
+<mapper namespace="com.practice.content.mapper.TQuestionCanvasMapper">
+  <resultMap id="BaseResultMap" type="com.practice.content.vo.TQuestionCanvas">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="source" jdbcType="VARCHAR" property="source" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List">
     id, source
   </sql>
-  <select id="selectByExample" parameterType="com.practice.vo.TQuestionCanvasExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.practice.content.vo.TQuestionCanvasExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -90,17 +90,17 @@
     delete from t_question_canvas
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.practice.vo.TQuestionCanvasExample">
+  <delete id="deleteByExample" parameterType="com.practice.content.vo.TQuestionCanvasExample">
     delete from t_question_canvas
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.practice.vo.TQuestionCanvas">
+  <insert id="insert" parameterType="com.practice.content.vo.TQuestionCanvas">
     insert into t_question_canvas (id, source)
     values (#{id,jdbcType=BIGINT}, #{source,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.practice.vo.TQuestionCanvas">
+  <insert id="insertSelective" parameterType="com.practice.content.vo.TQuestionCanvas">
     insert into t_question_canvas
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -119,7 +119,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.practice.vo.TQuestionCanvasExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.practice.content.vo.TQuestionCanvasExample" resultType="java.lang.Long">
     select count(*) from t_question_canvas
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -147,7 +147,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.practice.vo.TQuestionCanvas">
+  <update id="updateByPrimaryKeySelective" parameterType="com.practice.content.vo.TQuestionCanvas">
     update t_question_canvas
     <set>
       <if test="source != null">
@@ -156,7 +156,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.practice.vo.TQuestionCanvas">
+  <update id="updateByPrimaryKey" parameterType="com.practice.content.vo.TQuestionCanvas">
     update t_question_canvas
     set source = #{source,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}

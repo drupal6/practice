@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.practice.mapper.TAnswerMapper">
-  <resultMap id="BaseResultMap" type="com.practice.vo.TAnswer">
+<mapper namespace="com.practice.content.mapper.TAnswerMapper">
+  <resultMap id="BaseResultMap" type="com.practice.content.vo.TAnswer">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="topic_id" jdbcType="BIGINT" property="topicId" />
     <result column="an_seq" jdbcType="TINYINT" property="anSeq" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List">
     id, topic_id, an_seq, an_type, an_id
   </sql>
-  <select id="selectByExample" parameterType="com.practice.vo.TAnswerExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.practice.content.vo.TAnswerExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -93,19 +93,19 @@
     delete from t_answer
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.practice.vo.TAnswerExample">
+  <delete id="deleteByExample" parameterType="com.practice.content.vo.TAnswerExample">
     delete from t_answer
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.practice.vo.TAnswer">
+  <insert id="insert" parameterType="com.practice.content.vo.TAnswer">
     insert into t_answer (id, topic_id, an_seq, 
       an_type, an_id)
     values (#{id,jdbcType=BIGINT}, #{topicId,jdbcType=BIGINT}, #{anSeq,jdbcType=TINYINT}, 
       #{anType,jdbcType=TINYINT}, #{anId,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.practice.vo.TAnswer">
+  <insert id="insertSelective" parameterType="com.practice.content.vo.TAnswer">
     insert into t_answer
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -142,7 +142,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.practice.vo.TAnswerExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.practice.content.vo.TAnswerExample" resultType="java.lang.Long">
     select count(*) from t_answer
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -182,7 +182,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.practice.vo.TAnswer">
+  <update id="updateByPrimaryKeySelective" parameterType="com.practice.content.vo.TAnswer">
     update t_answer
     <set>
       <if test="topicId != null">
@@ -200,7 +200,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.practice.vo.TAnswer">
+  <update id="updateByPrimaryKey" parameterType="com.practice.content.vo.TAnswer">
     update t_answer
     set topic_id = #{topicId,jdbcType=BIGINT},
       an_seq = #{anSeq,jdbcType=TINYINT},
