@@ -11,7 +11,7 @@
 		</commentGenerator>
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://192.168.2.101:3306/db_praxis"
+			connectionURL="jdbc:mysql://192.168.2.101:3306/db_practice"
 			userId="root"
 			password="123456">
 		</jdbcConnection>
@@ -43,17 +43,15 @@
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- 指定数据库表 -->
-		<table schema="" tableName="t_answer"></table>
-		<table schema="" tableName="t_book"></table>
-		<table schema="" tableName="t_examination"></table>
-		<table schema="" tableName="t_grade"></table>
-		<table schema="" tableName="t_question"></table>
-		<table schema="" tableName="t_question_audio"></table>
-		<table schema="" tableName="t_question_canvas"></table>
-		<table schema="" tableName="t_question_pic"></table>
-		<table schema="" tableName="t_question_text"></table>
-		<table schema="" tableName="t_question_video"></table>
-		<table schema="" tableName="t_topic"></table>
-		<table schema="" tableName="t_type"></table>
+		<table schema="" tableName="t_answer_resource"></table>
+		<table schema="" tableName="t_answer_resource_type"></table>
+		<table schema="" tableName="t_answer_selection_optional"></table>
+		<table schema="" tableName="t_exrcises"></table>
+		<table schema="" tableName="t_exrcises_topic"></table>
+		<table schema="" tableName="t_grade_type"></table>
+		<table schema="" tableName="t_language_type"></table>
+		<table schema="" tableName="t_question_resource"></table>
+		<table schema="" tableName="t_question_resource_type"></table>
+		<table schema="" tableName="t_subject_type"></table>
 	</context>
 </generatorConfiguration>
