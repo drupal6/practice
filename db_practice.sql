@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : 101sdfasdfasdfasdf
-Source Server Version : 50173
+Source Server Version : 50718
 Source Host           : 192.168.2.101:3306
 Source Database       : db_practice
 
 Target Server Type    : MYSQL
-Target Server Version : 50173
+Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2018-12-21 15:23:45
+Date: 2019-01-28 18:00:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -78,19 +78,21 @@ DROP TABLE IF EXISTS `t_exrcises`;
 CREATE TABLE `t_exrcises` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '练习题编号',
   `name` varchar(255) DEFAULT NULL COMMENT '练习题名称',
-  `desc` varchar(255) DEFAULT NULL COMMENT '练习题描述',
+  `depict` varchar(255) DEFAULT NULL COMMENT '练习题描述',
   `language_id` int(11) unsigned DEFAULT NULL COMMENT '语言分类id',
   `subject_id` int(11) unsigned DEFAULT NULL COMMENT '学科分类id',
   `grade_id` int(11) unsigned DEFAULT NULL COMMENT '年级分类id',
   `auth_id` bigint(20) unsigned DEFAULT NULL COMMENT '作者id',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `states` tinyint(4) unsigned DEFAULT NULL COMMENT '状态  -1删除 0没有过审  1公开  ',
+  `states` tinyint(4) DEFAULT NULL COMMENT '状态  -1删除 0没有过审  1公开  ',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='练习题表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='练习题表';
 
 -- ----------------------------
 -- Records of t_exrcises
 -- ----------------------------
+INSERT INTO `t_exrcises` VALUES ('1', 'test1', 'test1', '1', '1', '1', '1', '2019-01-28 13:47:54', '1');
+INSERT INTO `t_exrcises` VALUES ('2', 'test2', 'test2', '2', '2', '2', '2', '2019-01-28 13:48:20', '1');
 
 -- ----------------------------
 -- Table structure for t_exrcises_topic

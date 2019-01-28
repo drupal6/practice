@@ -235,73 +235,73 @@ public class TExrcisesExample {
             return (Criteria) this;
         }
 
-        public Criteria andDescIsNull() {
-            addCriterion("desc is null");
+        public Criteria andDepictIsNull() {
+            addCriterion("depict is null");
             return (Criteria) this;
         }
 
-        public Criteria andDescIsNotNull() {
-            addCriterion("desc is not null");
+        public Criteria andDepictIsNotNull() {
+            addCriterion("depict is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDescEqualTo(String value) {
-            addCriterion("desc =", value, "desc");
+        public Criteria andDepictEqualTo(String value) {
+            addCriterion("depict =", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescNotEqualTo(String value) {
-            addCriterion("desc <>", value, "desc");
+        public Criteria andDepictNotEqualTo(String value) {
+            addCriterion("depict <>", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescGreaterThan(String value) {
-            addCriterion("desc >", value, "desc");
+        public Criteria andDepictGreaterThan(String value) {
+            addCriterion("depict >", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescGreaterThanOrEqualTo(String value) {
-            addCriterion("desc >=", value, "desc");
+        public Criteria andDepictGreaterThanOrEqualTo(String value) {
+            addCriterion("depict >=", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescLessThan(String value) {
-            addCriterion("desc <", value, "desc");
+        public Criteria andDepictLessThan(String value) {
+            addCriterion("depict <", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescLessThanOrEqualTo(String value) {
-            addCriterion("desc <=", value, "desc");
+        public Criteria andDepictLessThanOrEqualTo(String value) {
+            addCriterion("depict <=", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescLike(String value) {
-            addCriterion("desc like", value, "desc");
+        public Criteria andDepictLike(String value) {
+            addCriterion("depict like", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescNotLike(String value) {
-            addCriterion("desc not like", value, "desc");
+        public Criteria andDepictNotLike(String value) {
+            addCriterion("depict not like", value, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescIn(List<String> values) {
-            addCriterion("desc in", values, "desc");
+        public Criteria andDepictIn(List<String> values) {
+            addCriterion("depict in", values, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescNotIn(List<String> values) {
-            addCriterion("desc not in", values, "desc");
+        public Criteria andDepictNotIn(List<String> values) {
+            addCriterion("depict not in", values, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescBetween(String value1, String value2) {
-            addCriterion("desc between", value1, value2, "desc");
+        public Criteria andDepictBetween(String value1, String value2) {
+            addCriterion("depict between", value1, value2, "depict");
             return (Criteria) this;
         }
 
-        public Criteria andDescNotBetween(String value1, String value2) {
-            addCriterion("desc not between", value1, value2, "desc");
+        public Criteria andDepictNotBetween(String value1, String value2) {
+            addCriterion("depict not between", value1, value2, "depict");
             return (Criteria) this;
         }
 

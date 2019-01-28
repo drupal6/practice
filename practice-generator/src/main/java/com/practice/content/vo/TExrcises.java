@@ -7,7 +7,7 @@ public class TExrcises {
 
     private String name;
 
-    private String desc;
+    private String depict;
 
     private Integer languageId;
 
@@ -37,12 +37,12 @@ public class TExrcises {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDepict() {
+        return depict;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setDepict(String depict) {
+        this.depict = depict == null ? null : depict.trim();
     }
 
     public Integer getLanguageId() {

@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.practice.content.vo.TExrcises">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="depict" jdbcType="VARCHAR" property="depict" />
     <result column="language_id" jdbcType="INTEGER" property="languageId" />
     <result column="subject_id" jdbcType="INTEGER" property="subjectId" />
     <result column="grade_id" jdbcType="INTEGER" property="gradeId" />
@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, desc, language_id, subject_id, grade_id, auth_id, create_time, states
+    id, name, depict, language_id, subject_id, grade_id, auth_id, create_time, states
   </sql>
   <select id="selectByExample" parameterType="com.practice.content.vo.TExrcisesExample" resultMap="BaseResultMap">
     select
@@ -104,11 +104,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.practice.content.vo.TExrcises">
-    insert into t_exrcises (id, name, desc, 
+    insert into t_exrcises (id, name, depict, 
       language_id, subject_id, grade_id, 
       auth_id, create_time, states
       )
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{depict,jdbcType=VARCHAR}, 
       #{languageId,jdbcType=INTEGER}, #{subjectId,jdbcType=INTEGER}, #{gradeId,jdbcType=INTEGER}, 
       #{authId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{states,jdbcType=TINYINT}
       )
@@ -122,8 +122,8 @@
       <if test="name != null">
         name,
       </if>
-      <if test="desc != null">
-        desc,
+      <if test="depict != null">
+        depict,
       </if>
       <if test="languageId != null">
         language_id,
@@ -151,8 +151,8 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null">
-        #{desc,jdbcType=VARCHAR},
+      <if test="depict != null">
+        #{depict,jdbcType=VARCHAR},
       </if>
       <if test="languageId != null">
         #{languageId,jdbcType=INTEGER},
@@ -189,8 +189,8 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.desc != null">
-        desc = #{record.desc,jdbcType=VARCHAR},
+      <if test="record.depict != null">
+        depict = #{record.depict,jdbcType=VARCHAR},
       </if>
       <if test="record.languageId != null">
         language_id = #{record.languageId,jdbcType=INTEGER},
@@ -219,7 +219,7 @@
     update t_exrcises
     set id = #{record.id,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
-      desc = #{record.desc,jdbcType=VARCHAR},
+      depict = #{record.depict,jdbcType=VARCHAR},
       language_id = #{record.languageId,jdbcType=INTEGER},
       subject_id = #{record.subjectId,jdbcType=INTEGER},
       grade_id = #{record.gradeId,jdbcType=INTEGER},
@@ -236,8 +236,8 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null">
-        desc = #{desc,jdbcType=VARCHAR},
+      <if test="depict != null">
+        depict = #{depict,jdbcType=VARCHAR},
       </if>
       <if test="languageId != null">
         language_id = #{languageId,jdbcType=INTEGER},
@@ -263,7 +263,7 @@
   <update id="updateByPrimaryKey" parameterType="com.practice.content.vo.TExrcises">
     update t_exrcises
     set name = #{name,jdbcType=VARCHAR},
-      desc = #{desc,jdbcType=VARCHAR},
+      depict = #{depict,jdbcType=VARCHAR},
       language_id = #{languageId,jdbcType=INTEGER},
       subject_id = #{subjectId,jdbcType=INTEGER},
       grade_id = #{gradeId,jdbcType=INTEGER},

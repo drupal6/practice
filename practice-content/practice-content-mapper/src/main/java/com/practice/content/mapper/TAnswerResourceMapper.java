@@ -1,12 +1,11 @@
 package com.practice.content.mapper;
 
+import com.practice.content.vo.TAnswerResource;
+import com.practice.content.vo.TAnswerResourceExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import com.practice.content.vo.TAnswerResource;
-import com.practice.content.vo.TAnswerResourceExample;
 
 @Mapper
 public interface TAnswerResourceMapper {
